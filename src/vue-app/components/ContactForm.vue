@@ -1,7 +1,5 @@
 <template>
-  <form
-    @submit.prevent='handleSubmit'
-    class="w-50 mt-5">
+  <form @submit.prevent="handleSubmit" class="w-50 mt-5">
     <div class="mb-3">
       <label for="name" class="form-label d-block">
         Nombre:*
