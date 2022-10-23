@@ -5,6 +5,8 @@ import router from '@/vue-app/router';
 import store from '@/vue-app/store';
 import Notifications from 'vue-notification';
 
+import './styles/index.css';
+
 // Domain
 import Injectable from '@/modules/shared/di/domain/injectable';
 import Inject from '@/modules/shared/di/domain/inject';

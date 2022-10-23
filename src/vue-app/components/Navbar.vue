@@ -1,7 +1,16 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light ">
     <div class="container-fluid">
-      <router-link to="/" class="navbar-brand">Coca-Cola</router-link>
+      <router-link to="/" class="navbar-brand">
+        <img
+          src="https://i.pinimg.com/originals/45/1d/df/451ddf96e958c635948cd88c29892565.png"
+          alt="Logo"
+          width="50"
+          height="50"
+          class="d-inline-block"
+        />
+        Coca-Cola
+      </router-link>
       <button
         class="navbar-toggler"
         type="button"
