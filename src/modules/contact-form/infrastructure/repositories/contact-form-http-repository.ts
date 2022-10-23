@@ -13,7 +13,7 @@ export default class ContactFormHttpRepository implements ContactFormRepository 
   @Inject(TYPES.HTTP_CONNECTOR)
   private readonly http_connector!: HttpConnector;
 
-  private readonly endpoint = `${CONSTANTS.API_URL}/api/v2/contact-form`;
+  private readonly endpoint = `${CONSTANTS.API_URL}/api/v1/contact-form`;
 
   sendContactForm(payload: ContactFormEntity): Promise<void> {
     return new Promise((resolve, reject) => {

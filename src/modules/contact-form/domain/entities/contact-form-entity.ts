@@ -1,7 +1,6 @@
 export type ContactFormEntity = {
   name: string;
+  email: string;
   address: string;
   details: string;
-  id: string;
-  submit_date: string;
 }
