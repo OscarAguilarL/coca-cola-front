@@ -53,13 +53,7 @@
       </label>
     </div>
     <div class="d-grid">
-      <button
-        type="submit"
-        class="btn btn-primary btn-lg"
-        :disabled="can_continue"
-      >
-        Enviar
-      </button>
+      <button type="submit" class="btn btn-primary btn-lg" :disabled="can_continue">Enviar</button>
     </div>
   </form>
 </template>
@@ -68,8 +62,12 @@
 import { Component, Vue } from 'vue-property-decorator';
 import TYPES from '@/types';
 
+// APPLICATION
 import CreateContactFormCommand from '@/modules/contact-form/application/commands/create-contact-form-command';
+
+// DOMAIN
 import { RouterRepository } from '@/modules/shared/router/domain/repository/router-repository';
+import { Notifier } from '@/modules/shared/notifier/domain/notifier';
 import Inject from '@/modules/shared/di/domain/inject';
 
 @Component({ name: 'ContactForm' })
@@ -79,6 +77,9 @@ export default class ContactForm extends Vue {
 
   @Inject(TYPES.ROUTER)
   private readonly router!: RouterRepository;
+
+  @Inject(TYPES.NOTIFIER)
+  private readonly notifier!: Notifier
 
   inputs = {
     name: '',
@@ -106,9 +107,11 @@ export default class ContactForm extends Vue {
         address: this.inputs.address,
         details: this.inputs.details,
       });
+      this.notifier.showSuccessNotification('Información enviada, Nos pondremos en contacto contigo muy pronto');
       this.router.navigate('/');
     } catch (e) {
       console.error(e);
+      this.notifier.showErrorNotification('Ha ocurrido un error, vuelve a intentarlo más tarde');
     }
   }
 }

@@ -3,6 +3,7 @@ import TYPES from '@/types';
 import { VueConstructor } from 'vue';
 import router from '@/vue-app/router';
 import store from '@/vue-app/store';
+import Notifications from 'vue-notification';
 
 // Domain
 import Injectable from '@/modules/shared/di/domain/injectable';
@@ -14,6 +15,7 @@ export default class Application {
 
   create(app: VueConstructor) {
     this.Vue.config.productionTip = false;
+    this.Vue.use(Notifications);
 
     return new this.Vue({
       router,

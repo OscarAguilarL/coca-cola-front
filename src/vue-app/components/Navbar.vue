@@ -23,7 +23,7 @@
           </li>
           <li class="nav-item">
             <router-link to="/contact" class="nav-link" active-class="active">
-              Contact
+              Contacto
             </router-link>
           </li>
         </ul>
